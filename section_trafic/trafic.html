@@ -5,15 +5,65 @@
     <title>weather</title>
     <!--  공통경로의 JS CSS 불러오기  -->
     <script src="../common/js/common.js"></script>
+    <script src="../common/js/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="../common/css/common.css"/>
     <!--  상대경로로 JS CSS 불러오기  -->
     <script src="js/trafic.js"></script>
     <link rel="stylesheet" type="text/css" href="css/trafic.css"/>
+    <style>
+        #trafic_slide_gallery{
+            display: flex;
+            width: 2700px;
+        }
+        #trafic_slide_gallery>img{
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+        }
+        #trafic_gallery_wrap{
+            border: 10px solid red;
+            width: 300px;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+
+        var trafic_slide_gallery_Xoffset = 0
+        function trafic_Move(){
+            trafic_slide_gallery_Xoffset -= 300
+            if (trafic_slide_gallery_Xoffset < -2400 ){
+                trafic_slide_gallery_Xoffset = 0
+            }
+            $('#trafic_slide_gallery').animate({'marginLeft':`${trafic_slide_gallery_Xoffset}px`},300)
+        }
+
+
+        // $(String_Selector)  : 요소 찾아서 돌려줌
+        // $(String_HTML)  : 입력받은 HTML 코드를 지가 새롭게 생성해서 돌려줌.
+        // $(function) : 페이지 로드 완료됐을 떄 해당 함수 돌리라고 등록해줌
+        // $(element) : 해당 요소를 jquery 객체로 만들어줌
+    </script>
+
 </head>
 
 <!--여기 아래 부분만 작성하세요-->
 <section id="trafic">
-    <p>지하철 관련 섹션 입니다.</p>
+    <div id="trafic_testBtn">지하철 관련 섹션 입니다.</div>
+    <button onclick="trafic_Move()">가라..제발..</button>
+
+    <div id="trafic_gallery_wrap">
+        <div id="trafic_slide_gallery">
+            <img src="src/1호선.jpg" alt="사진1">
+            <img src="src/2호선.gif" alt="사진2">
+            <img src="src/3호선.jpg" alt="사진3">
+            <img src="src/4호선.jpg" alt="사진4">
+            <img src="src/5호선.jpg" alt="사진5">
+            <img src="src/6호선.jpg" alt="사진6">
+            <img src="src/7호선.jpg" alt="사진7">
+            <img src="src/8호선.jpg" alt="사진8">
+            <img src="src/9호선.jpg" alt="사진9">
+        </div>
+    </div>
 </section>
 <!--여기 위에 부분만 작성하세요-->
 
