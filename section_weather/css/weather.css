@@ -2,3 +2,29 @@
     height: 510px;
     background-color: aquamarine ;
 }
+
+.weather_container{
+    margin: 5px;
+    border: 2px solid black;
+    width: 510px ;
+    height: 768px;
+    overflow: hidden;
+}
+
+#weather_image {
+    width: 479px;
+    height: 579px;
+    margin: 15px 15px;
+}
+
+#weather_dateContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    border: 2px;
+}
+#weather_dateContainer > div {
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+}
