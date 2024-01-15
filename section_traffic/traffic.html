@@ -9,8 +9,8 @@
 
     <link rel="stylesheet" type="text/css" href="../common/css/common.css"/>
     <!--  상대경로로 JS CSS 불러오기  -->
-    <script src="js/trafic.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/trafic.css"/>
+    <script src="js/traffic.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/traffic.css"/>
 <script>
 
 
@@ -20,14 +20,14 @@
 </head>
 
 <!--여기 아래 부분만 작성하세요-->
-<section id="trafic">
-    <div id="trafic_testBtn">지하철 관련 섹션 입니다.</div>
-    <button onclick="trafic_back()">back</button>
-    <button onclick="trafic_play()">play</button>
-    <button onclick="trafic_stop()">stop</button>
-    <button onclick="trafic_Move()">next</button>
-    <div id="trafic_gallery_wrap">
-        <div id="trafic_slide_gallery">
+<section id="traffic">
+    <div id="traffic_testBtn">지하철 관련 섹션 입니다.</div>
+    <button onclick="traffic_back()">back</button>
+    <button id="traffic_playToggle" onclick="traffic_play()">play</button>
+<!--    <button onclick="traffic_stop()">stop</button>-->
+    <button onclick="traffic_Move()">next</button>
+    <div id="traffic_gallery_wrap">
+        <div id="traffic_slide_gallery">
             <img src="src/1호선.jpg" alt="사진1">
             <img src="src/2호선.gif" alt="사진2">
             <img src="src/3호선.jpg" alt="사진3">
