@@ -28,3 +28,42 @@
     line-height: 75px;
     font-size: 20px;
 }
+
+/********************************************************************/
+#weather-title > button {
+    background-color: #818181;
+    width: 50px;
+    border: none;
+    line-height: 30px;
+}
+.button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    width: 80%;
+    background: white;
+}
+article { width: 510px; }
+#weather_part_01 {
+    float: left;
+    padding: 30px;
+}
+#weather_wrap {
+    float: left;
+}
+
+#weather_koreaImg {
+    width: 350px;
+}
+footer {
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    font-size: 0.8em;
+}
+
+#weather-title > button.active {
+    background-color: yellow;
+}
