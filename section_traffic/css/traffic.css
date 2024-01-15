@@ -4,15 +4,16 @@
 }
 #traffic_slide_gallery{
     display: flex;
-    width: 2700px;
+    width: 5400px;
 }
-#traffic_slide_gallery>img{
+.traffic_slide_gallery_Image{
     display: inline-block;
-    width: 300px;
-    height: 200px;
+    width: 600px;
+    height: 400px;
 }
 #traffic_gallery_wrap{
     border: 10px solid red;
-    width: 300px;
+    width: 600px;
+    /*height: 400px;*/
     overflow: hidden;
 }
