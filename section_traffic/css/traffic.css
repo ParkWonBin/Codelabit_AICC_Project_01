@@ -17,3 +17,10 @@
     /*height: 400px;*/
     overflow: hidden;
 }
+
+#backbtn {
+        background-size: contain;
+}
+#nextbtn {
+    background-size: contain;
+}

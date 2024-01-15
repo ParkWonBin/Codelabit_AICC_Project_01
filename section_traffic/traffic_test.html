@@ -11,26 +11,39 @@
     <script src="js/traffic.js"></script>
     <link rel="stylesheet" type="text/css" href="css/traffic.css"/>
 <script>
-
+    function traffic_back(){
+        var backButton = document.getElementById("backbtn");
+        var newImagepath = "src/back.jpg";
+        backButton.style.backgroundImage = "url('" + newImagepath + "')";
+    }
+    function traffic_next(){
+        var nextButton = document.getElementById("nextbtn");
+        var newImagepath = "src/next.jpg";
+        nextButton.style.backgroundImage = "url('" + newImagepath + "')";
+    }
 
 </script>
 
 
 </head>
 
-<!--여기 아래 부분만 작성하세요-->
-
+<section id="traffic">
+    <div id="traffic_testBtn">지하철 관련 섹션 입니다.</div>
+    <button id="backbtn" onclick="traffic_back()">back</button>
+    <button id="traffic_playToggle" onclick="traffic_play()">play</button>
+    <!--    <button onclick="traffic_stop()">stop</button>-->
+    <button id="nextbtn" onclick="traffic_Move()">next</button>
+    <div id="traffic_gallery_wrap">
         <div id="traffic_slide_gallery">
-            <img src="src/1호선.jpg" alt="사진1">
-            <img src="src/2호선.gif" alt="사진2">
-            <img src="src/3호선.jpg" alt="사진3">
-            <img src="src/4호선.jpg" alt="사진4">
-            <img src="src/5호선.jpg" alt="사진5">
-            <img src="src/6호선.jpg" alt="사진6">
-            <img src="src/7호선.jpg" alt="사진7">
-            <img src="src/8호선.jpg" alt="사진8">
-            <img src="src/9호선.jpg" alt="사진9">
+            <img class="traffic_slide_gallery_Image" src="src/1호선.jpg" alt="사진1">
+            <img class="traffic_slide_gallery_Image" src="src/2호선.jpg" alt="사진2">
+            <img class="traffic_slide_gallery_Image" src="src/3호선.jpg" alt="사진3">
+            <img class="traffic_slide_gallery_Image" src="src/4호선.jpg" alt="사진4">
+            <img class="traffic_slide_gallery_Image" src="src/5호선.jpg" alt="사진5">
+            <img class="traffic_slide_gallery_Image" src="src/6호선.jpg" alt="사진6">
+            <img class="traffic_slide_gallery_Image" src="src/7호선.jpg" alt="사진7">
+            <img class="traffic_slide_gallery_Image" src="src/8호선.jpg" alt="사진8">
+            <img class="traffic_slide_gallery_Image" src="src/9호선.jpg" alt="사진9">
         </div>
-<!--여기 위에 부분만 작성하세요-->
-
-</html>
+    </div>
+</section></html>

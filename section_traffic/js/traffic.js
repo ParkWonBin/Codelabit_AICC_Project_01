@@ -5,19 +5,20 @@
 
 var traffic_slide_gallery_Xoffset = 0;
 var intervalId = null;
+const TRAFFIC_IMAGE_WIDTH= 600
 
 function traffic_Move() {
-    traffic_slide_gallery_Xoffset -= 300
-    if (traffic_slide_gallery_Xoffset < -2400) {
+    traffic_slide_gallery_Xoffset -= TRAFFIC_IMAGE_WIDTH
+    if (traffic_slide_gallery_Xoffset < -8*TRAFFIC_IMAGE_WIDTH) {
         traffic_slide_gallery_Xoffset = 0
     }
     $('#traffic_slide_gallery').animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
 }
 
 function traffic_back() {
-    traffic_slide_gallery_Xoffset += 300
+    traffic_slide_gallery_Xoffset += TRAFFIC_IMAGE_WIDTH
     if (traffic_slide_gallery_Xoffset > 0) {
-        traffic_slide_gallery_Xoffset = -2400
+        traffic_slide_gallery_Xoffset = -8*TRAFFIC_IMAGE_WIDTH
     }
     $(`#traffic_slide_gallery`).animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
 }
