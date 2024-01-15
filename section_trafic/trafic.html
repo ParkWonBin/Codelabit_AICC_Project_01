@@ -10,7 +10,19 @@
     <!--  상대경로로 JS CSS 불러오기  -->
     <script src="js/trafic.js"></script>
     <link rel="stylesheet" type="text/css" href="css/trafic.css"/>
+<!--<script>-->
+<!--    function trafic_back() {-->
+<!--        trafic_slide_gallery_Xoffset += 300-->
+<!--        if (trafic_slide_gallery_Xoffset < -2400){-->
+<!--            trafic_slide_gallery_Xoffset = 0-->
+<!--        }-->
+<!--        $(`#trafic_slide_gallery`).animate({'marginLeft':`${trafic_slide_gallery_Xoffset}px`},300)-->
+<!--    }-->
 
+<!--    $(function(){-->
+<!--        $(".trafic_slide_gallery")-->
+<!--            .animate({marginLeft:"300px"},1000);});-->
+<!--</script>-->
 
 
 </head>
@@ -18,8 +30,8 @@
 <!--여기 아래 부분만 작성하세요-->
 <section id="trafic">
     <div id="trafic_testBtn">지하철 관련 섹션 입니다.</div>
-    <button onclick="trafic_Move()">가라..제발..</button>
-
+    <button onclick="trafic_back()">back</button>
+    <button onclick="trafic_Move()">next</button>
     <div id="trafic_gallery_wrap">
         <div id="trafic_slide_gallery">
             <img src="src/1호선.jpg" alt="사진1">
