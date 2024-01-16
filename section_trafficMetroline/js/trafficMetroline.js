@@ -58,7 +58,7 @@ function traffic_play() {
 // }
 
 function CreateTrafficSlider(){
-    let trafficContainder = $('#traffic')
+    let trafficContainder = $('#trafficMetroline')
     // 버튼 추가
     trafficContainder.append( $('<button onclick="traffic_back()">back</button>'))
     trafficContainder.append( $('<button id="traffic_playToggle" onclick="traffic_play()">play</button>'))

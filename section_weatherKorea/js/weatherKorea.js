@@ -26,7 +26,7 @@ function weather_setImageSrc(day,time){
 //     weather_DaySelected('weather_Mon','월')
 // })
 function CreateweatherPart01(){
-    let weatherContainer =  $('#weather')
+    let weatherContainer =  $('#weatherKorea')
     let arcrticle = $('<article id="weather_part_01" class="national_weather"></article>')
     let weather_wrap = $('<div id="weather_wrap"></div>')
 
