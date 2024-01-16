@@ -1,9 +1,21 @@
 const chatbotConversation = {
-    "첫대사" : "안녕하세요 쳇봇입니다. 1,2,3 선택하쇼",
-    data : {
-        "1" : "1번입니다.",
-        "2" : "2번입니다.",
-        "3" : "3번입니다."
+    botMessage: `코드랩 쳇봇입니다.<br>메뉴 번호를 입력해서 메뉴를 선택하세요.<br>▶ 교통 안내<br>▶ 날씨 안내`,
+    botResponse: {
+        "교통안내": {
+            botMessage: `교통안내를 선택하셨습니다.<br>메뉴 번호를 입력해서 메뉴를 선택하세요.<br>▶ 처음으로<br>▶ 지하철 노선도<br>▶ 지하철 혼잡도<br>▶ 네이버 길찾기`,
+            botResponse: {
+                "지하철노선도": {botMessage: `지하철 호선 보기를 선택하셨습니다.<br>▶ 아무키나 입력하면 처음으로`, botFunction: "trafficMetroline"},
+                "지하철혼잡도": {botMessage: `지하철 실시간 혼잡도 보기를 선택하셨습니다.<br>안내를 시작합니다.  아무키나 입력하면 처음으로`, botFunction: "trafficChart"},
+                "네이버길찾기": {botMessage: `네이버 길찾기를 선택하셨습니다.<br>▶ 아무키나 입력하면 처음으로`, botFunction: "trafficNaverSearch"}
+            }
+        },
+        "날씨안내": {
+            botMessage: `날씨 안내를 선택하셨습니다.<br>메뉴 번호를 입력해서 메뉴를 선택하세요.<br>▶ 처음으로<br>▶ 요일별 날씨보기.<br>▶ 실시간 날씨보기`,
+            botResponse: {
+                "요일별날씨": {botMessage: `요일별 날씨 보기를 선택하셨습니다.<br>▶ 아무키나 입력하면 처음으로`, botFunction: "weatherKorea"},
+                "실시간날씨": {botMessage: `실시간 날씨 보기를 선택하셨습니다.<br>▶ 아무키나 입력하면 처음으로`, botFunction: "weatherChart"}
+            }
+        },
     }
 }
 
@@ -12,33 +24,83 @@ const chatbotConversation = {
 // 여러 실행문을 실행하고 싶으면 $(function(){ 실행문 }) 이렇게 넣으면 됨.
 // 그럼 해당 실행문이 묶여서 익명함수(이름없는 함수) 가 생성되고.
 // 익명함수가 $()안에 들어가니까 HTML 열리고 나서 해당 내용 수행됨.
-// $(function(){
-//     appendToChatLog('Bot: ' + chatbotConversation['첫대사']);
-// })
-function appendToChatLog(message) {
-    var chatLog = document.getElementById('chat-log');
-    chatLog.innerHTML += '<p>' + message + '</p><br>';
+let chatMessageContainer;
+let chatContext;
+let chatInput;
+$(InitChatRoom)
+
+function InitChatRoom() {
+    // 초기설정
+    let chatbot = $('#chatbot')
+    chatMessageContainer = $('<div id="chatMessageContainer"></div>');
+
+    chatbot.append($(`<div id="chatTitle"><strong>로고랑 아이콘 들어갈 위치</strong></div>`))
+    chatbot.append(chatMessageContainer)
+
+    let chatInputContainer = $(`<div id="chatInputContainer"></div>`);
+     chatInput = $(`<textarea id="chatInput" placeholder="메시지를 입력하세요..."></textarea>`)
+    let chatSendBtn = $(`<button id="chatSendBtn" onClick="sendMessage()">Send</button>`)
+
+    chatbot.append(chatInputContainer)
+    chatInputContainer.append(chatInput)
+    chatInputContainer.append(chatSendBtn)
+
+    // 이벤트 등록
+    chatInput.keypress(function (e) {
+        if (e.which === 13 && !e.shiftKey) {
+            // 엔터 키가 눌렸고, Shift 키는 눌리지 않았을 때
+            sendMessage();
+        }
+    });
+
+    // 이벤트 등록 후 초기화
+    chatContext = chatbotConversation;
+    resiveMessage('초기화')
+}
+
+function resiveMessage(key) {
+
+    // var messageContainer = document.getElementById('chatbot');
+    var messageElement = $(`<div class='message assistant'>...Bot 응답 기다리는 중...</div>`);
+    chatMessageContainer.append(messageElement);
+    chatMessageContainer[0].scrollTop = chatMessageContainer.prop("scrollHeight");
+
+    // 1초에서 3초 사이의 랜덤 딜레이를 생성
+    setTimeout(function() {console.log('대기')}, Math.floor(Math.random() * 3000) + 1000);
+
+    messageElement.html(chatLeftPopContext(key))
+    chatMessageContainer[0].scrollTop = chatMessageContainer.prop("scrollHeight");
+}
+function chatLeftPopContext(key){
+    // 0 입력되면 초기화
+    if(key==='초기화'){
+        chatContext = chatbotConversation;
+        return chatContext.botMessage
+    }
+    if(!('botResponse' in chatContext)){
+        // botResponse 가 없는 노드로 온 경우 아무 키나 입력해도 처음으로
+        chatContext = chatbotConversation;
+        return chatContext.botMessage
+    }
+    // 선택지 있다면 수행
+    let resultMessage = ""
+    if(key in chatContext.botResponse){
+        chatContext = chatContext.botResponse[key]
+        resultMessage = chatContext.botMessage
+    }else{
+        resultMessage = `주어진 선택지를 입력해주세요<br>선택지 목록: ${Object.keys(chatbotConversation.botResponse).join(' , ')}`
+    }
+    return resultMessage
 }
 function sendMessage() {
-    var userInput = document.getElementById('user-input').value;
-    appendToChatLog('User: ' + userInput);
+    var newMessage = chatInput.val().trim().replace(" ","").replace(/\n/g, '<br>');
+    if (newMessage.trim() !== '') {
+        let messageElement = $(`<div class='message user'></div>`);
+        chatMessageContainer.append(messageElement);
+        messageElement.html(newMessage);
+        chatInput.val('');
+        chatMessageContainer.scrollTop = chatMessageContainer.scrollHeight;
 
-    // 대본에서 해당 선택치가 있는지 확인하기
-
-
-    // 페이지 주소를 포함한 응답 생성
-    var botResponse = generateBotResponse(userInput);
-    appendToChatLog('Bot: ' + botResponse);
-
-    // 채팅 입력창 초기화
-    document.getElementById('user-input').value = '';
-}
-
-
-
-function generateBotResponse(userInput) {
-    // 여기에서 페이지 주소를 포함한 응답을 생성
-    // 사용자 입력에 따라 적절한 응답 및 페이지 주소를 생성합니다.
-    var currentPage ;
-    return '안녕하세요. 무엇을 도와드릴까요? :) ' + currentPage;
+        resiveMessage(newMessage)
+    }
 }
