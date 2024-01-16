@@ -39,6 +39,6 @@ function sendMessage() {
 function generateBotResponse(userInput) {
     // 여기에서 페이지 주소를 포함한 응답을 생성
     // 사용자 입력에 따라 적절한 응답 및 페이지 주소를 생성합니다.
-    var currentPage = window.location.href;
-    return '안녕하세요. 무엇을 도와드릴까요? :) ' + userInput + ' ' + currentPage;
+    var currentPage ;
+    return '안녕하세요. 무엇을 도와드릴까요? :) ' + currentPage;
 }
