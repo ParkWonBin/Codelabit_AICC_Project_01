@@ -12,19 +12,18 @@
     <script> </script>
     <style>
         #chat-container {
-            width: auto;
+            width: 300px;
+            height: 300px;
             margin: 20px auto;
             border: 1px solid #ccc;
             padding: 10px;
-            height: 300px;
             overflow-y: auto;
         }
         #input-container {
-            width: auto;
             margin: 10px auto;
+            width: auto;
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
         }
         #user-input {
             margin-bottom: 5px;
@@ -48,7 +47,7 @@
 
         // 초기 환영 메세지 출력
         function showWelcomeMessage() {
-            appendMessage('안녕하세요. 무엇을 도와드릴까요??<br>1. 날씨<br>2. 길찾기');
+            appendMessage('안녕하세요. 무엇을 도와드릴까요??<br>1. 날씨<br>2. 길찾기<br>');
         }
 
         // 사용자 메시지 처리 및 응답
@@ -60,8 +59,8 @@
                 if (userMessage.toLowerCase().includes('1') || userMessage.toLowerCase().includes('오늘의 날씨')) {
                     showSubCategories(['오전', '오후']);
                     CATEGORY_STATUS = 2;
-                } else if (userMessage.toLowerCase().includes('2') || userMessage.toLowerCase().includes('길찾기')) {
-                    showSubCategories(['인천시청역', '수락산역', '검단사거리역', '홍대역']);
+                } else if (userMessage.toLowerCase().includes('2') || userMessage.toLowerCase().includes('출발지')) {
+                    showSubCategories(['인천시청역', '수락산역', '검단사거리역', '홍대역', '가산디지털단지역']);
                     CATEGORY_STATUS = 2;
                 } else {
                     // 다른 키워드에 대한 기본 응답
@@ -74,10 +73,10 @@
                 const selectedCategory = userMessage.toLowerCase();
                 if (selectedCategory.includes('오전') || selectedCategory.includes('오후')) {
                     sendSubCategoryMessage(selectedCategory, ['오전', '오후']);
-                    showSubCategories(['여성의류', '남성의류', '']);
-                } else if (selectedCategory.includes('가산디지털역') || selectedCategory.includes('남성의류') || selectedCategory.includes('유아의류')) {
-                    sendSubCategoryMessage(selectedCategory, ['여성의류', '남성의류', '유아의류']);
-                    showSubCategories(['여성의류', '남성의류', '유아의류']);
+                    showSubCategories(['00', '00', '00']);
+                } else if (selectedCategory.includes('목적지')) {
+                    sendSubCategoryMessage(selectedCategory, ['인천시청역', '수락산역', '검단사거리역', '홍대역', '가산디지털단지역']);
+                    showSubCategories(['11', '11', '11']);
                 } else if (userMessage === '0') {
                     showWelcomeMessage();
                     CATEGORY_STATUS = 1;
