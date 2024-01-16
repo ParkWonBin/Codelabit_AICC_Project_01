@@ -12,9 +12,9 @@ const chatbotConversation = {
 // 여러 실행문을 실행하고 싶으면 $(function(){ 실행문 }) 이렇게 넣으면 됨.
 // 그럼 해당 실행문이 묶여서 익명함수(이름없는 함수) 가 생성되고.
 // 익명함수가 $()안에 들어가니까 HTML 열리고 나서 해당 내용 수행됨.
-$(function(){
-    appendToChatLog('Bot: ' + chatbotConversation['첫대사']);
-})
+// $(function(){
+//     appendToChatLog('Bot: ' + chatbotConversation['첫대사']);
+// })
 function appendToChatLog(message) {
     var chatLog = document.getElementById('chat-log');
     chatLog.innerHTML += '<p>' + message + '</p><br>';
