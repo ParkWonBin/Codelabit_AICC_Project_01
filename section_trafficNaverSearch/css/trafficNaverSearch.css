@@ -1,0 +1,26 @@
+#traffic_pathFinder{
+    display: flex;
+    flex-direction: column;
+    background-color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    max-width: 300px;
+
+}
+
+#traffic_inputContainer{
+    display: flex;
+    flex-direction: row;
+}
+#traffic_inputContainer > * {
+    flex-grow: 1;
+    padding: 5px;
+}
+#traffic_pathFinder_result{
+    background-color: aqua;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 5px 10px 5px;
+}
+
