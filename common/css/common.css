@@ -83,18 +83,16 @@ footer {
 #weather{
     display: flex;
 }
-#weather > article{
-    width:100%
-}
 #weather_L{
-    flex-grow: 2;
+    width: 600px;
+    min-width: 600px;
     background-color: #00ffe7;
 }
 #weather_M{
-    flex-grow: 1;
+    width:100%;
     background-color: #0033ff;
 }
 #weather_R{
-    flex-grow: 1;
+    width:100%;
     background-color: #b200ff;
 }

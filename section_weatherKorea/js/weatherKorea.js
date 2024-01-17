@@ -2,7 +2,7 @@ var weather_DAY = '월'
 var weather_time = '오전'
 
 function weather_DaySelected(selectedDay,dateName){
-    document.querySelectorAll('#weather-title > button').forEach(button => {
+    document.querySelectorAll('#weatherTitle > button').forEach(button => {
         button.classList.remove('active');
     });
     // 선택된 요일 버튼에 active 클래스 추가
@@ -25,27 +25,24 @@ function weather_setImageSrc(day,time){
 // $("#weather_Mon").on('click',function(){
 //     weather_DaySelected('weather_Mon','월')
 // })
-function CreateweatherPart01(){
+function CreateweatherKorea(){
     let weatherContainer =  $('#weatherKorea')
-    let arcrticle = $('<article id="weather_part_01" class="national_weather"></article>')
     let weather_wrap = $('<div id="weather_wrap"></div>')
 
-    let weatherTitle = $('<div id="weather-title"></div>')
+    let weatherTitle = $('<div id="weatherTitle"></div>')
     let weatherImgContainer = $('<div id="weather_ImgContainer"></div>')
 
-    weatherContainer.append(arcrticle)
-    arcrticle.append(weather_wrap)
+    weatherContainer.append(weather_wrap)
     weather_wrap.append(weatherTitle)
     weather_wrap.append(weatherImgContainer)
 
-    weatherTitle.append($(`<h2 class="weather_title">전국날씨</h2>`))
-    weatherTitle.append($(`<button id="weather_Mon" onclick="weather_DaySelected('weather_Mon','월')"> 월 <br> 날짜 </button>`))
-    weatherTitle.append($(`<button id="weather_Tue" onclick="weather_DaySelected('weather_Tue','화')"> 화 <br> 날짜 </button>`))
-    weatherTitle.append($(`<button id="weather_Wed" onclick="weather_DaySelected('weather_Wed','수')"> 수 <br> 날짜 </button>`))
-    weatherTitle.append($(`<button id="weather_Thu" onclick="weather_DaySelected('weather_Thu','목')"> 목 <br> 날짜 </button>`))
-    weatherTitle.append($(`<button id="weather_Fri" onclick="weather_DaySelected('weather_Fri','금')"> 금 <br> 날짜 </button>`))
-    weatherTitle.append($(`<button id="weather_Sat" onclick="weather_DaySelected('weather_Sat','토')"> 토 <br> 날짜 </button>`))
-    weatherTitle.append($(`<button id="weather_Sun" onclick="weather_DaySelected('weather_Sun','일')"> 일 <br> 날짜 </button>`))
+    weatherTitle.append($(`<button id="weather_Mon" class="active" onclick="weather_DaySelected('weather_Mon','월')"> 월 </button>`))
+    weatherTitle.append($(`<button id="weather_Tue" onclick="weather_DaySelected('weather_Tue','화')"> 화 </button>`))
+    weatherTitle.append($(`<button id="weather_Wed" onclick="weather_DaySelected('weather_Wed','수')"> 수 </button>`))
+    weatherTitle.append($(`<button id="weather_Thu" onclick="weather_DaySelected('weather_Thu','목')"> 목 </button>`))
+    weatherTitle.append($(`<button id="weather_Fri" onclick="weather_DaySelected('weather_Fri','금')"> 금 </button>`))
+    weatherTitle.append($(`<button id="weather_Sat" onclick="weather_DaySelected('weather_Sat','토')"> 토 </button>`))
+    weatherTitle.append($(`<button id="weather_Sun" onclick="weather_DaySelected('weather_Sun','일')"> 일 </button>`))
 
     weatherImgContainer.append($(`<button id="weather_AM" onclick="weather_TimeSelected('오전')">오전</button>`))
     weatherImgContainer.append($(`<button id="weather_PM" onclick="weather_TimeSelected('오후')">오후</button><br>`))
@@ -53,4 +50,4 @@ function CreateweatherPart01(){
 
 }
 
-$(CreateweatherPart01)
+$(CreateweatherKorea)
