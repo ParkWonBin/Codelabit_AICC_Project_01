@@ -65,11 +65,12 @@ function resiveMessage(key) {
     chatMessageContainer.append(messageElement);
     chatMessageContainer[0].scrollTop = chatMessageContainer.prop("scrollHeight");
 
-    // 1초에서 3초 사이의 랜덤 딜레이를 생성
-    setTimeout(function() {console.log('대기')}, Math.floor(Math.random() * 3000) + 1000);
+    // 1초 쉬고 내용 작성
+     setTimeout(function() {
+        messageElement.html(chatLeftPopContext(key))
+        chatMessageContainer[0].scrollTop = chatMessageContainer.prop("scrollHeight");
+    }, 500);
 
-    messageElement.html(chatLeftPopContext(key))
-    chatMessageContainer[0].scrollTop = chatMessageContainer.prop("scrollHeight");
 }
 function chatLeftPopContext(key){
     // 0 입력되면 초기화
