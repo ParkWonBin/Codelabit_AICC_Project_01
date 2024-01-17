@@ -32,6 +32,8 @@ $(InitChatRoom)
 function InitChatRoom() {
     // 초기설정
     let chatbot = $('#chatbot')
+
+    // 쳇봇 대화방 생성 관려
     chatMessageContainer = $('<div id="chatMessageContainer"></div>');
 
     chatbot.append($(`<div id="chatTitle"><strong>로고랑 아이콘 들어갈 위치</strong></div>`))
@@ -56,6 +58,20 @@ function InitChatRoom() {
     // 이벤트 등록 후 초기화
     chatContext = chatbotConversation;
     resiveMessage('초기화')
+
+
+    //쳇봇 아이콘 생성
+    let ChatbotIcon =$(`<div id="chabotIconContainer"><img id="chatbotIcon" src="src/챗봇아이콘.png" alt="ChatbotIcon"></div>`)
+    chatbot.append(ChatbotIcon)
+
+    // 이벤트 등록
+    ChatbotIcon.on('click', function() {
+        if (chatbot.css('display') === 'none') {
+            chatbot.show();
+        } else {
+            chatbot.hide();
+        }
+    });
 }
 
 function resiveMessage(key) {
