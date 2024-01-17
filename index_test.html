@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+
+    </style>
     <!--  공통경로의 JS CSS 불러오기  -->
     <script src="common/js/jquery.js"></script>
     <script src="common/js/chart.js"></script>
@@ -77,9 +80,21 @@
     </article>
 </section>
 <!-------------------------------------->
-<section id="chatbot">
+    <div id="chabotIconContainer">
+        <img id="chatbotIcon" src="src/챗봇아이콘.png" alt="ChatbotIcon">
+    </div>
+<section id="chatbot"></section>
+<script>
+    $('#chatbotIcon').on('click', function() {
+        let chatbot = $('#chatbot');
+        if (chatbot.css('display') === 'none') {
+            chatbot.show();
+        } else {
+            chatbot.hide();
+        }
+    });
 
-</section>
+</script>
 <!-------------------------------------->
 <footer>
     <div class="foot_container">

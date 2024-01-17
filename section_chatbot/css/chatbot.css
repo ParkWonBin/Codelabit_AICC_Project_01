@@ -6,7 +6,10 @@
 /*    font-family: Arial, sans-serif;*/
 /*}*/
 #chatbot {
-    max-width: 500px;
+    width: 500px;
+    position: fixed;
+    right: 20px;
+    bottom : 20px;
     display: flex;
     flex-direction: column; /* 요소들을 세로 방향으로 쌓음 */
     padding: 5px;
@@ -22,11 +25,26 @@
 }
 #chatbot #chatTitle {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #715253;
     color: white;
     font-weight: bold;
     padding: 10px 15px;
+}
+#chatbotClose{
+    max-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:rgb(0,0,0,0);
+    padding: 0 10px;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    color: white;
 }
 #chatbot #chatTitle>*{
     flex: 1;
@@ -40,7 +58,7 @@
     padding: 10px;
     resize: none;
 }
-#chatbot button {
+#chatbot #chatSendBtn {
     padding: 10px 20px;
 }
 #chatbot .message{
@@ -60,4 +78,29 @@
 #chatbot .assistant{
     background-color: white;
 
+}
+
+#chatbotIconContainer {
+    /*display: none;*/
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 3;
+    background-color: #ffff00;
+    padding: 15px;
+    border-radius: 50px;
+    border: 5px solid #715253;
+}
+
+#chatbotIcon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#chatbotIconContainer:hover {
+    background-color: #00ffe7;
 }
