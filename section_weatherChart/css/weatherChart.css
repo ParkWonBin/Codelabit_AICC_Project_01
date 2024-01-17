@@ -1,0 +1,37 @@
+#weatherChart {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#weatherChart #gallery_wrap { width: 33%; }
+#weatherChart .slide_gallery {
+    box-shadow: none;
+    text-align: center;
+}
+/* weather table style */
+
+#weatherChart .weatherChart_table {
+    /*padding: 20px 0;*/
+    border-bottom: 1px solid #e9ecef;
+
+}
+#weatherChart .weatherChart_table img { width: 2em; }
+#weatherChart .weatherChart_table th, td {
+    border-left: 1px solid #e9ecef;
+    padding: 10px;
+    font-size: 0.9em;
+}
+#weatherChart th:first-child, td:first-child { border: none; }
+
+.bx-wrapper { box-shadow: none; margin-bottom: 30px }
+.bx-pager { display: none; }
+.bx-wrapper .bx-prev { display: none; }
+.bx-wrapper .bx-next { display: none; }
+/* weather slide end */
+
+/* weather chart start */
+#weatherChart_sec {
+    width: 30%;
+    margin: 0 auto;
+}
