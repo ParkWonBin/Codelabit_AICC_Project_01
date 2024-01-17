@@ -59,11 +59,6 @@ function traffic_play() {
 
 function CreateTrafficSlider(){
     let trafficContainder = $('#trafficMetroline')
-    // 버튼 추가
-    trafficContainder.append( $('<button onclick="traffic_back()">back</button>'))
-    trafficContainder.append( $('<button id="traffic_playToggle" onclick="traffic_play()">play</button>'))
-    trafficContainder.append( $(' <button onclick="traffic_Move()">next</button>'))
-
     // 슬라이더 추가
     let traffic_gallery_wrap = $('<div id="traffic_gallery_wrap"></div>')
     let traffic_slide_gallery = $('<div id="traffic_slide_gallery"></div>')
@@ -75,6 +70,12 @@ function CreateTrafficSlider(){
         traffic_slide_gallery.append($(`<img class="traffic_slide_gallery_Image" src="src/${i}호선.jpg" alt="사진${i}">`))
     }
 
+    // 버튼 추가
+    let buttonContainer = $(`<div id='trafficMatroline_BtnContainer'></div>`)
+    trafficContainder.append(buttonContainer)
+    buttonContainer.append( $('<button onclick="traffic_back()">back</button>'))
+    buttonContainer.append( $('<button id="traffic_playToggle" onclick="traffic_play()">play</button>'))
+    buttonContainer.append( $('<button onclick="traffic_Move()">next</button>'))
 }
 
 //DOM 완료되면 테그 생성해주기

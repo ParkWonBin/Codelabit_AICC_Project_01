@@ -52,24 +52,43 @@ footer {
     padding-left: 20px;
 }
 /**************************************/
-#trafficVideo {
-
-}
-
 /* 교통 관련 */
-#sectionFirst{
+#traffic{
    display: flex;
-
 }
-#trafficLeft{
+#traffic > article{
     width: 100%;
+}
+#traffic_L{
     background-color: #715253;
 }
-#trafficMiddle{
-    width: 100%;
+#traffic_M{
     background-color: #e9ecef;
 }
-#trfficRight{
-    width: 100%;
+#traffic_R{
     background-color: green;
+}
+
+/*****************************************/
+#trafficVideo{
+    width: 1000px;
+}
+/*****************************************/
+#weather{
+    display: flex;
+}
+#weather > article{
+    width:100%
+}
+#weather_L{
+    flex-grow: 2;
+    background-color: #00ffe7;
+}
+#weather_M{
+    flex-grow: 1;
+    background-color: #0033ff;
+}
+#weather_R{
+    flex-grow: 1;
+    background-color: #b200ff;
 }
