@@ -133,9 +133,8 @@ function CreateTrafficChart() {
     table.append(tableSecondRow)
 
     trafficContainer.append(table);
-    trafficContainer.append($(`<canvas id="percentageChart" width="1200" height="700"></canvas>`));
+    trafficContainer.append($(`<canvas id="percentageChart"></canvas>`));
 }
-
 
 // HTML 로그완료될 떄 돌릴 함수
 $(CreateTrafficChart)
