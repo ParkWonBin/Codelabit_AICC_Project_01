@@ -61,6 +61,8 @@ footer {
 }
 #traffic_L{
     background-color: #715253;
+    position: relative;
+    overflow: hidden;
 }
 #traffic_M{
     background-color: #e9ecef;
@@ -71,10 +73,14 @@ footer {
 
 /*****************************************/
 #trafficVideo{
-    width: 1000px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
 }
 /*****************************************/
-#weather{
+#weather
     display: flex;
 }
 #weather > article{
