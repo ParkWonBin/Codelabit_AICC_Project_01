@@ -56,11 +56,8 @@ footer {
 #traffic{
    display: flex;
 }
-#traffic > article{
-    /*width: 100%;*/
-}
 #traffic_L{
-    width: 74%;
+    min-width: 600px;
     background-color: #715253;
     position: relative;
     overflow: hidden;
@@ -71,6 +68,7 @@ footer {
 #traffic_R{
     width: 100%;
     background-color: green;
+    max-height: 580px;
 }
 
 /*****************************************/
