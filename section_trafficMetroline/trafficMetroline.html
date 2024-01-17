@@ -34,13 +34,22 @@
         }
     </style>
 
-
+    <script>
+        function directyoutube() {
+            var youtubelink = document.getElementById('youtubelink')
+            var youtubeURL = youtubelink.querySelector('a').getAttribute('href');
+            window.location.href = youtubeURL;
+        }
+    </script>
 </head>
 
 <div id="trafficMetroline">
 </div>
 <div id="Metrovideo">
-    <video width="600" height="300" src="src/traffic_video.mp4" autoplay muted></video>
-    <p><a href="https://youtu.be/n1xVGQowSow">서울교통공사</a></p>
+    <video width="600" height="300" src="src/traffic_video.mp4" autoplay muted onclick="directyoutube()"></video>
+    <p id="youtubelink"><a href="https://youtu.be/n1xVGQowSow"></a></p>
 </div>
+<script>
+
+</script>
 </html>
