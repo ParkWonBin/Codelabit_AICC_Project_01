@@ -57,9 +57,10 @@ footer {
    display: flex;
 }
 #traffic > article{
-    width: 100%;
+    /*width: 100%;*/
 }
 #traffic_L{
+    width: 74%;
     background-color: #715253;
     position: relative;
     overflow: hidden;
@@ -68,6 +69,7 @@ footer {
     background-color: #e9ecef;
 }
 #traffic_R{
+    width: 100%;
     background-color: green;
 }
 
@@ -80,7 +82,7 @@ footer {
     height: 100%;
 }
 /*****************************************/
-#weather
+#weather{
     display: flex;
 }
 #weather > article{
