@@ -27,11 +27,13 @@ function traffic_play() {
     // setInterval의 ID를 저장하고 반환
     if (intervalId === null) {
         intervalId = setInterval(traffic_Move, 1000);
-        $('#traffic_playToggle').text('stop')
+        $('#traffic_playToggle').text('■')
+        $('#traffic_playToggle').addClass('BigChar')
     } else {
         clearInterval(intervalId);
         intervalId = null
-        $('#traffic_playToggle').text('play')
+        $('#traffic_playToggle').removeClass('BigChar')
+        $('#traffic_playToggle').text('▶')
     }
 
 
@@ -73,9 +75,9 @@ function CreateTrafficSlider(){
     // 버튼 추가
     let buttonContainer = $(`<div id='trafficMatroline_BtnContainer'></div>`)
     trafficContainder.append(buttonContainer)
-    buttonContainer.append( $('<button onclick="traffic_back()">back</button>'))
-    buttonContainer.append( $('<button id="traffic_playToggle" onclick="traffic_play()">play</button>'))
-    buttonContainer.append( $('<button onclick="traffic_Move()">next</button>'))
+    buttonContainer.append( $('<button onclick="traffic_back()">◀◀</button>'))
+    buttonContainer.append( $('<button id="traffic_playToggle" onclick="traffic_play()">▶</button>'))
+    buttonContainer.append( $('<button onclick="traffic_Move()">▶▶</button>'))
 }
 
 //DOM 완료되면 테그 생성해주기

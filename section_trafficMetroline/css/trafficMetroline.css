@@ -33,3 +33,15 @@
 #trafficMetroline  #nextbtn {
     background-size: contain;
 }
+
+#trafficMetroline #trafficMatroline_BtnContainer *{
+    font-weight: bold;
+    font-size: 25px;
+}
+#trafficMetroline #traffic_playToggle.BigChar{
+    font-size: 35px;
+    overflow: hidden;  /* 내용이 버튼 크기를 초과할 경우 숨김 처리 */
+    text-align: center; /* 글자를 버튼 중앙에 위치 */
+    line-height: 0; /* 글자를 버튼 중앙에 정렬 (세로) */
+
+}

@@ -58,24 +58,24 @@ function createWeatherChart() {
     let wcChart = $(`<div id="wcChart"><canvas id="tempChart"></canvas></div>`)
 
     weatherChart.append(wcTitle)
+    wcTitle.append($(`<div class="wcDate"><div class="wcDDD">일</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     wcTitle.append($(`<div class="wcDate"><div class="wcDDD">월</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     wcTitle.append($(`<div class="wcDate"><div class="wcDDD">화</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     wcTitle.append($(`<div class="wcDate"><div class="wcDDD">수</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     wcTitle.append($(`<div class="wcDate"><div class="wcDDD">목</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     wcTitle.append($(`<div class="wcDate"><div class="wcDDD">금</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     wcTitle.append($(`<div class="wcDate"><div class="wcDDD">토</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
-    wcTitle.append($(`<div class="wcDate"><div class="wcDDD">일</div><img class="wcWIcon"/><div class="wcTemp"></div></div>`))
     weatherChart.append(wcChart)
 
     ctx = document.getElementById('tempChart').getContext('2d');
     tempChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            labels: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
             datasets: [{
-                label: '주간 날시 기온차',
+                label: '주간 날씨 기온차',
                 data: weaterChartData,
-                borderWidth: 1,
+                borderWidth: 3,
                 fill: true,
             }],
         },
