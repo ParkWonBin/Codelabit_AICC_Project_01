@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>weatherChart</title>
+    <script src="../common/js/jquery.js"></script>
+    <script src="../common/js/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="../common/css/jquery.bxslider.min.css">
+<!--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+        * { padding: 0; margin: 0; }
+        body {
+            width: 100%;
+            background: #818181;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        #weather {
+            width: 80%;
+            height: 510px;
+            margin: 0 auto;
+            background: white;
+        }
+        #weather_container {
+            width: 30%;
+            float: right;
+            margin: 0 40px;
+            padding-top: 30px;
+        }
+        #weather_chart, #weatherChart_sec {
+            /*justify-content: center;*/
+            /*align-items: center;*/
+        }
+        .weekly_weather {
+            display: flex;
+        }
+        .weatherChart_table {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        tbody {
+            display: inline-block;
+        }
+        .weatherTable_head img { width: 2em; }
+        .weatherChart_table th, td {
+            border-left: 1px solid #e9ecef;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        .weatherTable_inner {
+            font-size: 1em;
+            font-weight: normal;
+            color: #adb5bd;
+        }
+        .weatherTable_chart {
+            font-size: 0.9em;
+            color: #818181;
+            border-bottom: 1px solid #e9ecef;
+        }
+        th:first-child, td:first-child { border: none; }
+    </style>
+</head>
+<body>
+<div id="gallery_wrap">
+    <div class="slide_gallery">
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+        <table class="weatherChart_table">
+            <tr class="weatherTable_head">
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/sun.png"></th>
+                <th><img src="src/rain.png"></th>
+                <th><img src="src/snow.png"></th>
+                <th><img src="src/brightness.png"></th>
+                <th><img src="src/wind.png"></th>
+                <th><img src="src/sun.png"></th>
+            </tr>
+            <tr class="weatherTable_inner">
+                <td>맑음</td>
+                <td>흐림</td>
+                <td>비</td>
+                <td>눈</td>
+                <td>맑음</td>
+                <td>바람</td>
+                <td>흐림</td>
+            </tr>
+            <tr class="weatherTable_chart">
+                <td class="change_sunnyDay">12°</td>
+                <td class="change_cloudyDay">3°</td>
+                <td class="change_rainyDay">-1°</td>
+                <td class="change_snowyDay">-3°</td>
+                <td class="change_sunnyDay">10°</td>
+                <td class="change_windyDay">-3°</td>
+                <td class="change_cloudyDay">-2°</td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!--    <section id="weather">-->
+<!--        <div id="weather_container">-->
+<!--            <article id="weather_chart" >-->
+<!--                <div class="weekly_weather slide_gallery">-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="weatherChart_table">-->
+<!--                        <tr class="weatherTable_head">-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                            <th><img src="src/rain.png"></th>-->
+<!--                            <th><img src="src/snow.png"></th>-->
+<!--                            <th><img src="src/brightness.png"></th>-->
+<!--                            <th><img src="src/wind.png"></th>-->
+<!--                            <th><img src="src/sun.png"></th>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_inner">-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>흐림</td>-->
+<!--                            <td>비</td>-->
+<!--                            <td>눈</td>-->
+<!--                            <td>맑음</td>-->
+<!--                            <td>바람</td>-->
+<!--                            <td>흐림</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="weatherTable_chart">-->
+<!--                            <td class="change_sunnyDay">12°</td>-->
+<!--                            <td class="change_cloudyDay">3°</td>-->
+<!--                            <td class="change_rainyDay">-1°</td>-->
+<!--                            <td class="change_snowyDay">-3°</td>-->
+<!--                            <td class="change_sunnyDay">10°</td>-->
+<!--                            <td class="change_windyDay">-3°</td>-->
+<!--                            <td class="change_cloudyDay">-2°</td>-->
+
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </article>-->
+<!--            <article id="weatherChart_sec">-->
+<!--                <div>-->
+<!--                    <canvas id="myChart"></canvas>-->
+<!--                </div>-->
+<!--            </article>-->
+<!--        </div>-->
+<!--    </section>-->
+<script>
+
+    const minValue = -20;
+    const maxValue = 20;
+
+    function getRandomVal(min, max){
+        return Math.floor(Math.random() * (max - min) - min);
+    }
+
+    // let sunny_randomValue = getRandomVal(-25,20)
+    // let cloudy_randomValue = getRandomVal(-35,10);
+    // let rainy_randomValue = Math.floor(Math.random() * (maxValue - minValue) - maxValue + 2);
+    // let snowy_randomValue = Math.floor(Math.random() * (maxValue - minValue) - maxValue + 1);
+    // let windy_randomValue = Math.floor(Math.random() * (maxValue - minValue) - maxValue - 2);
+
+    $(document).ready(function (){
+       $(".bx-next").click(function (){
+           alert('tset')
+           // $(".change").text(windy_randomValue);
+           $(".change_sunnyDay").text(getRandomVal(-25,20).toFixed(0) + '°');
+           $(".change_cloudyDay").text(getRandomVal(-35,20).toFixed(0) + '°');
+           $(".change_rainyDay").text(getRandomVal(-23,20).toFixed(0) + '°');
+           $(".change_snowyDay").text(getRandomVal(-24,20).toFixed(0) + '°');
+           $(".change_windyDay").text(getRandomVal(-23,20).toFixed(0) + '°');
+       })
+   })
+    //
+    // /* chart js canvas */
+    // /* button을 누를 때마다 새로운 값 생성 */
+    // const ctx = document.getElementById('myChart');
+    // const weatherButton = document.getElementsByClassName('bx-next');
+    // const weatherChart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: {
+    //         labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    //         datasets: [{
+    //             label: '일주일 날씨',
+    //             data: [15, 0, -15],
+    //             borderWidth: 2,
+    //             fill: true
+    //         }]
+    //     },
+    //     options: {
+    //         responsive: true,
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+    //
+    //
+    //
+    weatherButton.addEventListener('click', function (){
+
+        alert('test')
+        document.getElementsByClassName('.change').innerText = random_value;
+
+    })
+    weatherButton.addEventListener('click', changeWeatherValue);
+
+
+    weatherChart.update()
+    //
+    //
+    // /* weather slide JQuery */
+    // $(function (){
+    //     $('.weekly_weather').bxSlider({
+    //         auto: false,
+    //         // autoControls: false,
+    //     })
+    // })
+</script>
+</body>
+</html>

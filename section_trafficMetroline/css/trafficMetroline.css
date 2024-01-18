@@ -1,26 +1,34 @@
-#traffic{
-    height: 510px;
-    background-color: coral ;
+#trafficMetroline{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid green;
 }
-#traffic_slide_gallery{
+#trafficMetroline #trafficMatroline_BtnContainer{
+    display: flex;
+}
+#trafficMetroline #trafficMatroline_BtnContainer button{
+    flex-grow: 1;
+    padding: 10px;
+
+}
+#trafficMetroline #traffic_gallery_wrap{
+    overflow: hidden;
+}
+
+#trafficMetroline #traffic_slide_gallery{
     display: flex;
     width: 5400px;
 }
-.traffic_slide_gallery_Image{
+#trafficMetroline .traffic_slide_gallery_Image{
     display: inline-block;
     width: 600px;
     height: 400px;
 }
-#traffic_gallery_wrap{
-    border: 10px solid red;
-    width: 600px;
-    /*height: 400px;*/
-    overflow: hidden;
-}
 
-#backbtn {
+#trafficMetroline  #backbtn {
         background-size: contain;
 }
-#nextbtn {
+#trafficMetroline  #nextbtn {
     background-size: contain;
 }

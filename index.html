@@ -5,78 +5,81 @@
     <title>Title</title>
     <!--  공통경로의 JS CSS 불러오기  -->
     <script src="common/js/jquery.js"></script>
+    <script src="common/js/chart.js"></script>
     <script src="common/js/common.js"></script>
+<!--    <script src="common/js/jquery.bxslider.min.js"></script>-->
     <link rel="stylesheet" type="text/css" href="common/css/common.css"/>
+<!--    <link rel="stylesheet" href="common/css/jquery.bxslider.min.css">-->
+
     <!--  trafficMetroline JS CSS 불러오기  -->
     <script src="section_trafficMetroline/js/trafficMetroline.js"></script>
     <link rel="stylesheet" type="text/css" href="section_trafficMetroline/css/trafficMetroline.css"/>
+
     <!--  trafficNaverSearch JS CSS 불러오기  -->
     <script src="section_trafficNaverSearch/js/trafficNaverSearch.js"></script>
     <link rel="stylesheet" type="text/css" href="section_trafficNaverSearch/css/trafficNaverSearch.css"/>
-    <!--  weatherChart JS CSS 불러오기  -->
-    <script src="section_weatherChart/js/weatherChart.js"></script>
-    <link rel="stylesheet" type="text/css" href="section_weatherChart/css/weatherChart.css"/>
+
+    <!--  trafficChart JS CSS 불러오기  -->
+    <script src="section_trafficChart/js/trafficChart.js"></script>
+    <link rel="stylesheet" type="text/css" href="section_trafficChart/css/trafficChart.css"/>
+
     <!--  weatherKorea JS CSS 불러오기  -->
     <script src="section_weatherKorea/js/weatherKorea.js"></script>
     <link rel="stylesheet" type="text/css" href="section_weatherKorea/css/weatherKorea.css"/>
+
     <!--  chatbot JS CSS 불러오기  -->
     <script src="section_chatbot/js/chatbot.js"></script>
     <link rel="stylesheet" type="text/css" href="section_chatbot/css/chatbot.css"/>
 
+
+    <!--  weatherChart JS CSS 불러오기  -->
+    <script src="section_weatherChart/js/weatherChart.js"></script>
+    <link rel="stylesheet" type="text/css" href="section_weatherChart/css/weatherChart.css"/>
 </head>
 <body>
 <!-- header start -->
 <header>
     <div id="top-menu">
-        <div class="top-title">
+        <div id="top-title">
             <img src="src/summer.png" alt="title-icon">
-            <h1 class="header-title">Weather Navigation</h1>
+            <h1 id="header-title">Weather Navigation</h1>
         </div>
-        <nav class="top_nav">
-            <ul class="top_nav">
-                <li><a href="#">메인메뉴1</a></li>
-                <li><a href="#">메인메뉴2</a></li>
-                <li><a href="#">메인메뉴3</a></li>
-                <li><a href="#">메인메뉴4</a> </li>
-            </ul>
+        <nav id="top_nav">
+            <a href="#">메인메뉴1</a>
+            <a href="#">메인메뉴2</a>
+            <a href="#">메인메뉴3</a>
+            <a href="#">메인메뉴4</a>
         </nav>
     </div>
-    <nav id="sub_menu">
-        <ul class="sub_nav">
-            <li><a href="#">서브메뉴1</a></li>
-            <li><a href="#">서브메뉴2</a></li>
-            <li><a href="#">서브메뉴3</a></li>
-            <li><a href="#">서브메뉴4</a></li>
-        </ul>
-        <ul class="sub_nav">
-            <li><a href="#">서브메뉴1</a></li>
-            <li><a href="#">서브메뉴2</a></li>
-            <li><a href="#">서브메뉴3</a></li>
-            <li><a href="#">서브메뉴4</a></li>
-        </ul>
-        <ul class="sub_nav">
-            <li><a href="#">서브메뉴1</a></li>
-            <li><a href="#">서브메뉴2</a></li>
-            <li><a href="#">서브메뉴3</a></li>
-            <li><a href="#">서브메뉴4</a></li>
-        </ul>
-    </nav>
 </header>
 <!-------------------------------------->
 <section id="traffic">
-    <div id="trafficMetroline"></div>
-    <div id="trafficNaverSearch"></div>
-    <div id="trafficChart"></div>
+    <article id="traffic_L">
+        <video id="trafficVideo" src="src/traffic_video.mp4" autoplay muted loop></video>
+    </article>
+    <article id="traffic_M">
+        <div id="trafficMetroline"></div>
+        <div id="trafficNaverSearch"></div>
+    </article>
+    <article id="traffic_R">
+        <div id="trafficChart"></div>
+    </article>
 </section>
 <!-------------------------------------->
 <section id="weather">
-    <div id="weatherKorea"></div>
-    <div id="weatherChart"></div>
+    <article id="weather_L">
+        <div id="weatherKorea"></div>
+    </article>
+    <article id="weather_M">
+        <div id="weatherChart"></div>
+    </article>
+    <article id="weather_R">
+        <video id="weatherVideo" src="src/traffic_video.mp4" autoplay muted loop></video>
+    </article>
 </section>
 <!-------------------------------------->
-<section id="chatbot">
-
-</section>
+<div id="chatbotIconContainer"></div>
+<div id="chatbot"></div>
 <!-------------------------------------->
 <footer>
     <div class="foot_container">
