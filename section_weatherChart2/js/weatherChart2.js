@@ -13,11 +13,11 @@ const MIN_INTERVAL = 500;
 const MAX_INTERVAL = 2000;
 
 const weatherChartData = {
-    '맑음': [14, 24, 'src/brightness.png'],
-    '흐림': [10, 13, 'src/sun.png'],
-    '비': [5, 8, "src/rain.png"],
-    '눈': [-5, 0, "src/snow.png"],
-    '바람': [0, 20, "src/wind.png"]
+    '맑음': [8, 10, 'src/brightness.png'],
+    '흐림': [5, 7, 'src/sun.png'],
+    '비': [3, 6, "src/rain.png"],
+    '눈': [-3, 5, "src/snow.png"],
+    '바람': [4, 5, "src/wind.png"]
 }
 function getRandomWeather() {
     return weatherChartData[Object.keys(weatherChartData)[Math.floor(getRandomInterval(0, 5))]]
