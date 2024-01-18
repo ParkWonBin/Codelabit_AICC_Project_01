@@ -1,11 +1,9 @@
 #weatherKorea{
-
+    width: 365px;
+    height: 510px;
+    overflow: hidden;
 }
 #weatherKorea img{
-    width: 100%
-}
-
-#weatherKorea #weather_wrap{
     width: 100%;
 }
 
@@ -23,6 +21,7 @@
 
 #weatherKorea #weatherTitle > button.active {
     background-color: #54aff7;
+    color: white;
 }
 
 #weatherKorea #weather_ImgContainer{
@@ -44,32 +43,3 @@
 #weatherKorea #weather_PM{
     left : 15%
 }
-/*position: relative;*/
-/*}*/
-
-/*#weather_AM{*/
-
-/*position: absolute;*/
-/*top: 20px;*/
-/*padding: 5px;*/
-/*left: 16px;*/
-/*z-index: 3;*/
-/*opacity: 0.1;*/
-/*}*/
-
-/*#weather_PM{*/
-
-/*position: absolute;*/
-/*bottom: -52px;*/
-/*z-index: 3;*/
-/*right: 251px;*/
-/*padding: 5px;*/
-/*opacity: 0.01;*/
-/*}*/
-
-/*#weather_koreaImg{*/
-/*position: absolute;*/
-/*bottom: -425px;*/
-/*right: 0;*/
-/*z-index: 2;*/
-/*}*/

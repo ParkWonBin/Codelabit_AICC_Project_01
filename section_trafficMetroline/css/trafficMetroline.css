@@ -1,8 +1,9 @@
 #trafficMetroline{
     width: 600px;
+    height: 370px;
     display: flex;
     flex-direction: column;
-    border: 2px solid green;
+    /*border: 2px solid green;*/
 }
 #trafficMetroline #trafficMatroline_BtnContainer{
     display: flex;
@@ -23,7 +24,7 @@
 #trafficMetroline .traffic_slide_gallery_Image{
     display: inline-block;
     width: 600px;
-    height: 400px;
+    height: 325px;
 }
 
 #trafficMetroline  #backbtn {
