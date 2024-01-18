@@ -126,6 +126,16 @@ const weatherChartData = {
     '눈': [-3, 5, "src/snow.png"],
     '바람': [4, 5, "src/wind.png"]
 }
+// 범위 내 랜덤 숫자 뽑기
+function getRandomInterval(min, max) { 
+  return Math.random() * (max - min) + min;
+}
+// 임의의 날짜 뽑기
+function getRandomWeather() { // 
+      const keys = Object.keys(weatherChartData)
+      return weatherChartData[keys[Math.floor(getRandomInterval(0, keys.length))]]
+  }
+// 업데이트
 function updateTempByRendom() {
     weaterChartData = []
     for (let i = 1; i < 8; i++) {
