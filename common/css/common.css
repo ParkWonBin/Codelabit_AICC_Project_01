@@ -57,8 +57,8 @@ footer {
    display: flex;
 }
 #traffic_L{
-    min-width: 600px;
     background-color: #715253;
+    min-width: 600px;
     position: relative;
     overflow: hidden;
 }
@@ -79,6 +79,13 @@ footer {
     transform: translateX(-50%);
     height: 100%;
 }
+#weatherVideo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
 /*****************************************/
 #weather{
     display: flex;
@@ -93,6 +100,8 @@ footer {
     background-color: #0033ff;
 }
 #weather_R{
-    width:100%;
     background-color: #b200ff;
+    min-width: 600px;
+    position: relative;
+    overflow: hidden;
 }
