@@ -32,10 +32,11 @@ $(InitChatRoom)
 function InitChatRoom() {
     // 초기설정
     let chatbot = $('#chatbot')
+    // 채팅방 숨기기
+    chatbot.hide()
 
     // 쳇봇 대화방 생성 관려
     chatMessageContainer = $('<div id="chatMessageContainer"></div>');
-
     chatbot.append($(`<div id="chatTitle"><strong>로고랑 아이콘 들어갈 위치</strong><button id="chatbotClose" >X</button></div>`))
     chatbot.append(chatMessageContainer)
 
@@ -58,10 +59,6 @@ function InitChatRoom() {
     // 이벤트 등록 후 초기화
     chatContext = chatbotConversation;
     resiveMessage('초기화')
-
-
-    // 채팅방 숨기고 쳇봇 아이콘 생성
-    chatbot.hide()
     
     //쳇봇 아이콘 생성
     let ChatbotIcon =$(`#chatbotIconContainer`)

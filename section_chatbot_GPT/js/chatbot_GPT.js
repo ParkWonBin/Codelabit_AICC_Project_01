@@ -63,6 +63,7 @@ async function resiveMessageGPT(message) {
 function CreateChatbotGPT(){
     // GPT 채팅방 생성
     let chatbotGPT = $('#chatbotGPT');
+    chatbotGPT.hide()
     let chatGPT_Title = $('<div id="chatGPT-title"></div>')
     chatbotGPT.append(chatGPT_Title)
     chatGPT_Title.append($(`<div><strong>ChatGPT API와 연결된 채팅방입니다.</strong><button id="chatGPTClose" >X</button></div>`))
@@ -72,6 +73,8 @@ function CreateChatbotGPT(){
     chatbotGPT.append(chatGPT_NewMessageContainer)
     chatGPT_NewMessageContainer.append($(`<textarea id="chatGPT_NewMessage" placeholder="메시지를 입력하세요..."></textarea>`))
     chatGPT_NewMessageContainer.append($(`<button onclick="sendMessageGPT()">Send</button>`))
+
+    // 채팅방 숨기고 시작
 
     // GPT 아이콘 생성
     let chatbotGPT_IconContainer = $('#chatbotGPT_IconContainer');
