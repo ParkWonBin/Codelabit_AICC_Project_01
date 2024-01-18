@@ -20,11 +20,11 @@
 #### 리소스 출처
 공공/무료 이미지, ai 생성 이미지, youtube-studio:non copyright music
 
-지하철노선도 : https://www.seoulmetro.co.kr/kr/
-생성 이미지 : https://picsart.com/create/
-날씨 오디오 : https://studio.youtube.com
-날씨 아이콘 : https://www.flaticon.com/kr/free-icon
-쳇봇 아이콘 : https://www.flaticon.com/kr/free-icon/chatbot_2040946
+- 지하철노선도 : https://www.seoulmetro.co.kr/kr/
+- 생성 이미지 : https://picsart.com/create/
+- 날씨 오디오 : https://studio.youtube.com
+- 날씨 아이콘 : https://www.flaticon.com/kr/free-icon
+- 쳇봇 아이콘 : https://www.flaticon.com/kr/free-icon/chatbot_2040946
 
 ---
 #### 완성된 페이지 프리뷰
