@@ -34,7 +34,7 @@
 #### 기능별 세부 안내 
 ![](./PT/2024_0118_02_기능안내.png)
 
-###### 1. trafficMatroLine 
+#### 1. trafficMatroLine 
 - 내용 : 도권 지하철 노선도 보기
 - 기능 : 이미지 슬라이더 
   - 이전버튼 : 현재-1 호선 노선도 보기
@@ -66,7 +66,7 @@ function traffic_play() {
 
 ```
 
-###### 2. trafficNaverSerch
+#### 2. trafficNaverSerch
 - 내용 : 지하철 길찾기
 - 기능 : 외부링크
   - 출발역, 도착역 선택 시 naver 지도 연결 링크 생성
@@ -93,14 +93,14 @@ const ULR = `https://map.naver.com/p/subway/1000/${startCode}/${endCode}/-`
 // 외부링크 적용
 $("#traffic_pathFinder_result").attr('href',ULR)
 ```
-###### 3. trafficChart
+#### 3. trafficChart
 - 내용 : 임의의 숫자를 불러와서 혼잡도 표시
 - 기능 : ChartJS 로 차트 표시
   - 각 호선은 (-5% ~ 5%) 내외로 혼잡도 변화
   - 렌덤 범위 제한 : 혼잡도가 100% 넘기면 5% 차감, 50% 이하면 5% 추가 
 
 
-###### 4. weatherKorea
+#### 4. weatherKorea
 - 내용 : 요일 & 오전/오후 전국날씨 표시
 - 기능 : 버튼 클릭을 받아 이미지의 경로 수정 
 - 주요코드 
@@ -112,7 +112,7 @@ function weather_setImageSrc(day,time){
 }
 ```
 
-###### 5. weatherChart
+#### 5. weatherChart
 - 내용 : 주간 요일별 날씨 및 기온 예측
 - 기능 : Chart 로 표 표시
   - 각 요일별 날씨 예측
@@ -145,11 +145,11 @@ function updateTempByRendom() {
     tempChart.update();
 }
 ```
-###### 6. BGM
+#### 6. BGM
 - 내용 : 교통정보 라디오 표시
 - 기능 : Audio 테그 사용
 
-###### 7. chatbot
+#### 7. chatbot
 - 내용 : 웹페이지의 기능을 안내하는 쳇봇 서비스
 - 기능 : 대본 JSON 을 기준으로 사용자의 입력 받아 안내 수행
 - 주요 코드 :
