@@ -155,3 +155,13 @@ footer .f_info {
     width: 600px;
     height: 510px;
 }
+/********************************************/
+#BGM{
+    position: fixed;
+    bottom: 30px;
+    right: 120px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50px;
+    border: 1px solid #715253;
+}
