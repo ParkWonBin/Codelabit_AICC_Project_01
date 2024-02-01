@@ -5,7 +5,13 @@
 ![전국 날씨 지도](src/전국날씨지도.png)
 1. 요일별로 전국 날씨 현황을 확인할 수 있다.
 2. 오전/오후로 나눠 시간대별 전국 날씨 현황을 확인할 수 있다.
-##### 코드 공간  
+```js
+function weather_setImageSrc(day,time){
+    // day : 월화수목금토일 | time : 오전,오후
+    $('#weather_koreaImg').attr('src',`src/전국날씨_${day}_${time}.jpg`)
+}
+```
+- 요일 & 오전/오후의 버튼클릭으로 이미지 변경이 가능.
 ---
 ## 오늘의 날씨 정보
 ![오늘의 날씨](src/오늘의날씨.png)
@@ -15,7 +21,44 @@
 ## 요일별 온도 정보 트레픽
 ![주간 날씨 기온차](src/주간날씨기온차.png)
 - 요일별, 날씨 주간 기온차를 그래프로 통해 한눈에 확인이 가능하다.
-##### 코드 공간  
+```js
+const weatherChartData = {
+    '맑음': [8, 10, 'src/brightness.png'],
+    '흐림': [5, 7, 'src/sun.png'],
+    '비': [3, 6, "src/rain.png"],
+    '눈': [-3, 5, "src/snow.png"],
+    '바람': [4, 5, "src/wind.png"]
+}
+// 범위 내 랜덤 숫자 뽑기
+function getRandomInterval(min, max) { 
+  return Math.random() * (max - min) + min;
+}
+// 임의의 날짜 뽑기
+function getRandomWeather() { // 
+      const keys = Object.keys(weatherChartData)
+      return weatherChartData[keys[Math.floor(getRandomInterval(0, keys.length))]]
+  }
+// 업데이트
+function updateTempByRendom() {
+    weaterChartData = []
+    for (let i = 1; i < 8; i++) {
+        const [minTemp, maxTemp, ImgSrc] = getRandomWeather();
+
+        let randTemp = getRandomInterval(minTemp, maxTemp).toFixed(1);
+        weaterChartData.push(randTemp);
+
+        // 이미지 잡기
+        $(`#wcTitle > div:nth-child(${i}) > img`).attr('src', ImgSrc)
+
+        // 기온 잡기
+        $(`#wcTitle > div:nth-child(${i}) > div.wcTemp`).text(randTemp)
+
+    }
+    tempChart.data.datasets[0].data = weaterChartData;
+    tempChart.update();
+}
+```
+- 랜덤한 값으로 요일별 기온차를 확인할 수 있다.  
 ---
 
 # 작업일지
