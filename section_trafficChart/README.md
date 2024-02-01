@@ -42,10 +42,7 @@
     tableSecondRow.append($(`<td class="percentageChange">70%</td>`))
     table.append(tableSecondRow)
     trafficContainer.append(table);
-    trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));
-}```
-
-
+    trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));}
 
 - [x] step3 동적으로 그래프 변화 기능 추가(예시코드)
 
@@ -79,7 +76,7 @@ function flow_rate() {
     updateChart();
 }
 
-```
+
 
  
 
