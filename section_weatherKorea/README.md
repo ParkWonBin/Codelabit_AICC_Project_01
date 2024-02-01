@@ -30,12 +30,18 @@ function weather_setImageSrc(day,time){
 ---
 
 ## 요일별 기온 정보 트래픽
-![주간 날씨 기온차](src/주간날씨기온차.png)
+![Honeycam 2024-02-01 11-55-56](https://github.com/ParkWonBin/Codelabit_AICC_Project_01/assets/153577632/6542c7db-e30b-4b5b-8644-4bde684c914d)
 
 #### 목표
 - 요일별, 날씨 주간 기온차를 그래프로 통해 한눈에 확인이 가능하다.
   
 ```js
+let weaterChartData = [];
+let tempChart;
+
+const MIN_INTERVAL = 500;
+const MAX_INTERVAL = 2000;
+
 const weatherChartData = {
     '맑음': [8, 10, 'src/brightness.png'],
     '흐림': [5, 7, 'src/sun.png'],
@@ -44,15 +50,21 @@ const weatherChartData = {
     '바람': [4, 5, "src/wind.png"]
 }
 // 범위 내 랜덤 숫자 뽑기
-function getRandomInterval(min, max) { 
-  return Math.random() * (max - min) + min;
+function getRandomInterval(min, max) {
+    return Math.random() * (max - min) + min;
 }
 // 임의의 날짜 뽑기
-function getRandomWeather() { // 
-      const keys = Object.keys(weatherChartData)
-      return weatherChartData[keys[Math.floor(getRandomInterval(0, keys.length))]]
-  }
-// 업데이트
+function getRandomWeather() { //
+    const keys = Object.keys(weatherChartData)
+    return weatherChartData[keys[Math.floor(getRandomInterval(0, keys.length))]]
+}
+function weeklyUpdate() {
+    const randomInterval = getRandomInterval(MIN_INTERVAL, MAX_INTERVAL)
+    setTimeout(function () {
+        updateTempByRendom();
+        weeklyUpdate();
+    }, randomInterval);
+}
 function updateTempByRendom() {
     weaterChartData = []
     for (let i = 1; i < 8; i++) {
