@@ -22,7 +22,9 @@ function traffic_Move() {
     }
     $('#traffic_slide_gallery').animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
 }
+
 - [x] 왼쪽으로 이미지 이동 버튼 구현 (1/15) - 이지우
+
 ```js
 function traffic_back() {
     traffic_slide_gallery_Xoffset += TRAFFIC_IMAGE_WIDTH
@@ -31,7 +33,9 @@ function traffic_back() {
     }
     $(`#traffic_slide_gallery`).animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
 }
+
 - [x] 자동넘기기 활성화 되면 중지 버튼으로 기능 변경(재생/중지 기능버튼 일체화) (1/16) - 박원빈
+
 ```js
 function traffic_play() {
     // setInterval의 ID를 저장하고 반환
@@ -46,6 +50,7 @@ function traffic_play() {
         $('#traffic_playToggle').text('▶')
     }
 }
+
 
 - [x] 각종 버튼과 이미지에 대한 CSS 설정 - 박원빈 (1/16)
 
