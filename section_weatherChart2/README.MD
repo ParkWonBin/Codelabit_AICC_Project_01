@@ -1,4 +1,5 @@
 ## 실시간 전국 날씨와 기온차 차트 개발 
+담당자 : 박원빈(리더), 김은지
 
 ### 학습목표
 - HTML5, CSS3, JavaScript를 이용해 웹 서비스 홈페이지 제작 
@@ -41,7 +42,7 @@ function weeklyUpdate() {
 }
 ```
 2. #### STEP2 
-    [Chart.js](https://www.chartjs.org/) 플로그인을 활용하여 도출된 1번 값을 차트 표에 반환하도록 설정 
+    [Chart.js](https://www.chartjs.org/) 플로그인을 활용하여 도출된 1번 값을 차트 표에 반환하도록 코딩 
 ```js
 function updateTempByRendom() {
     weaterChartData = []
