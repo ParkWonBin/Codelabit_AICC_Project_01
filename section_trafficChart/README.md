@@ -21,7 +21,9 @@
   '''
   ```
 - [x] step2 호선별 그래프 그리기 (예시코드)
-  ```js
+  
+  ```js  
+ 
   '''
   function CreateTrafficChart() {
     let trafficContainer = $('#trafficChart')
@@ -44,12 +46,16 @@
     trafficContainer.append(table);
     trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));
 }
+
 '''
+
 ```
 
     
 - [x] step3 동적으로 그래프 변화 기능 추가(예시코드)
+
 ```js
+
 '''
 function flow_rate() {
     const percentageChangeElements = document.querySelectorAll('.percentageChange');
@@ -79,6 +85,7 @@ function flow_rate() {
     updateChart();
 }
 '''
+
 ```
 
  
