@@ -2,7 +2,9 @@
 - [x] chart 플러그인 다운로드
   [chart.js](https://www.chartjs.org/docs/latest/samples/line/line.html) 참조
 - [x] step1 호선별 차트 그리기 (예시코드)
-  ```function InitTrafficChart() {
+  ```js
+  '''
+  function InitTrafficChart() {
     const ctx = document.getElementById('percentageChart').getContext('2d');
     percentageChart = new Chart(ctx, {
         type: 'line',
@@ -15,7 +17,9 @@
                     borderWidth: 4,
                     fill: false,
                     data: chart_percentageChanges[0]
-                } 
+                }
+  '''
+  ```
 - [x] step2 호선별 그래프 그리기 (예시코드)
   ```
   function CreateTrafficChart() {
