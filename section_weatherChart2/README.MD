@@ -35,10 +35,23 @@ function weeklyUpdate() {
 ```
 2. [Chart.js](https://www.chartjs.org/) 플로그인을 활용하여 도출된 1번 값을 차트 표에 반환하도록 설정 
 ```js
-public class Calculator {
-    public static void main(String[] args) {
-        System.out.println("Hello World!"); 
+function updateTempByRendom() {
+    weaterChartData = []
+    for (let i = 1; i < 8; i++) {
+        const [minTemp, maxTemp, ImgSrc] = getRandomWeather();
+
+        let randTemp = getRandomInterval(minTemp, maxTemp).toFixed(1);
+        weaterChartData.push(randTemp);
+
+        // 이미지 잡기
+        $(`#wcTitle > div:nth-child(${i}) > img`).attr('src', ImgSrc)
+
+        // 기온 잡기
+        $(`#wcTitle > div:nth-child(${i}) > div.wcTemp`).text(randTemp)
+
     }
+    tempChart.data.datasets[0].data = weaterChartData;
+    tempChart.update();
 }
 ```
 3. 
