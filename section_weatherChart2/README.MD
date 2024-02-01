@@ -63,4 +63,5 @@ function updateTempByRendom() {
 }
 ```
 3. #### STEP3 
-    내용
+    완성된 결과물
+
