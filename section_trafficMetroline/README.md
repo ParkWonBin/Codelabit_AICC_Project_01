@@ -5,9 +5,23 @@
 ## 기능 명세
 ### 지하철 노선도 :
 - [x] 이미지 리소스 확보 (1/12)  - 이지우
+ 예시 이미지
 ![1호선](https://mblogthumb-phinf.pstatic.net/20150627_37/revolutio419_1435375888142XpTtP_PNG/LINE_1.png?type=w420)
 - [x] 애니메이션 슬라이드 초안 (1/12) - 박원빈
-- [x] 오른쪽으로 이미지 이동 버튼 구현 (1/12) - 박원빈
+  
+- [x] 오른쪽으로 이미지 이동 버튼 구현 (1/12) - 박원빈 (예시코드)
+ ```js
+var traffic_slide_gallery_Xoffset = 0;
+var intervalId = null;
+const TRAFFIC_IMAGE_WIDTH= 600
+
+function traffic_Move() {
+    traffic_slide_gallery_Xoffset -= TRAFFIC_IMAGE_WIDTH
+    if (traffic_slide_gallery_Xoffset < -8*TRAFFIC_IMAGE_WIDTH) {
+        traffic_slide_gallery_Xoffset = 0
+    }
+    $('#traffic_slide_gallery').animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
+}
 - [ ] 왼쪽으로 이미지 이동 버튼 구현 (1/15) - 이지우
 - [ ] 자동으로 1초마다 이미지 이동 버튼 구현 (1/15) - 이지우
 - [ ] 자동넘기기 활성화 되면 중지 버튼으로 기능 변경 (1/16) - 박원빈
