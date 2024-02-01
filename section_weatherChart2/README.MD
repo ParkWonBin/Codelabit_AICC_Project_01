@@ -1,6 +1,10 @@
 ## 실시간 전국 날씨와 기온차 차트 개발
 
 ### 학습목표
+- HTML5, CSS3, JavaScript를 이용해 웹 서비스 홈페이지 제작 
+- Chast.js 및 Jquery 학습을 복귀하여 개발에 활용 
+- 
+***
 1. JavaScript Array 함수로 [맑음, 흐림, 비, 눈, 바람] 생성 후 각 index 별 다른 값을 지정하여 0.5~2초마다 랜덤 값을 부여하도록 코딩
 ```js
 let weaterChartData = [];
