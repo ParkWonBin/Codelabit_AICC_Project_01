@@ -15,7 +15,7 @@
                     borderWidth: 4,
                     fill: false,
                     data: chart_percentageChanges[0]
-                } ```
+                } 
 - [x] step2 호선별 그래프 그리기 (예시코드)
   ```
   function CreateTrafficChart() {
@@ -37,8 +37,7 @@
     table.append(tableSecondRow)
 
     trafficContainer.append(table);
-    trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));
-}
+    trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));}
 
     
 - [x] step3 동적으로 그래프 변화 기능 추가(예시코드)
