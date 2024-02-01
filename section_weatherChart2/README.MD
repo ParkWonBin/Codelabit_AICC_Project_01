@@ -2,12 +2,10 @@
 
 1. ChartJS 플로그인을 사용하여 외부 플러그인 사용법을 학습 
 2. JavaScript를 이용하여 0.5~2초 사이의 랜덤값을 부여해 차트 변환을 연출 
-```java
-'''java
+```javascript
 public class Calculator {
     public static void main(String[] args) {
         System.out.println("Hello World!"); 
     }
 }
-'''
 ```
