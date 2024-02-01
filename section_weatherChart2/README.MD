@@ -38,7 +38,8 @@ function weeklyUpdate() {
     }, randomInterval);
 }
 ```
-2. [Chart.js](https://www.chartjs.org/) 플로그인을 활용하여 도출된 1번 값을 차트 표에 반환하도록 설정 
+2. #### STEP2 
+    [Chart.js](https://www.chartjs.org/) 플로그인을 활용하여 도출된 1번 값을 차트 표에 반환하도록 설정 
 ```js
 function updateTempByRendom() {
     weaterChartData = []
@@ -59,4 +60,5 @@ function updateTempByRendom() {
     tempChart.update();
 }
 ```
-3. 
+3. #### STEP3 
+    내용
