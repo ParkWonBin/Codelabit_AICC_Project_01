@@ -29,7 +29,7 @@ function weather_setImageSrc(day,time){
 ##### 코드 공간  
 ---
 
-## 요일별 온도 정보 트래픽
+## 요일별 기온 정보 트래픽
 ![주간 날씨 기온차](src/주간날씨기온차.png)
 
 #### 목표
