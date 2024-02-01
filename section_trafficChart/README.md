@@ -47,8 +47,6 @@
     trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));
 }
 
-'''
-
 ```
 
     
@@ -56,7 +54,6 @@
 
 ```js
 
-'''
 function flow_rate() {
     const percentageChangeElements = document.querySelectorAll('.percentageChange');
 
@@ -84,7 +81,6 @@ function flow_rate() {
 
     updateChart();
 }
-'''
 
 ```
 
