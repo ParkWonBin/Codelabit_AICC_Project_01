@@ -22,7 +22,7 @@
   ```
 - [x] step2 호선별 그래프 그리기 (예시코드)
   ```js
-  ```
+  '''
   function CreateTrafficChart() {
     let trafficContainer = $('#trafficChart')
     let table = $('<table></table>')
