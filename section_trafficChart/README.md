@@ -23,9 +23,8 @@
 - [x] step2 호선별 그래프 그리기 (예시코드)
   
   ```js  
- 
-  '''
-  function CreateTrafficChart() {
+
+    function CreateTrafficChart() {
     let trafficContainer = $('#trafficChart')
     let table = $('<table></table>')
     table.append(`<tr><th></th><th>1호선</th><th>2호선</th><th>3호선</th><th>4호선</th><th>5호선</th><th>6호선</th><th>7호선</th><th>8호선</th><th>9호선</th></tr>`)
@@ -42,7 +41,6 @@
     tableSecondRow.append($(`<td class="percentageChange">66%</td>`))
     tableSecondRow.append($(`<td class="percentageChange">70%</td>`))
     table.append(tableSecondRow)
-
     trafficContainer.append(table);
     trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));
 }
