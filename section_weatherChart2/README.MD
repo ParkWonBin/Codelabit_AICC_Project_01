@@ -64,4 +64,4 @@ function updateTempByRendom() {
 ```
 3. #### STEP3 
     완성된 결과물
-
+![Honeycam 2024-02-01 11-55-56](https://github.com/ParkWonBin/Codelabit_AICC_Project_01/assets/153577632/6542c7db-e30b-4b5b-8644-4bde684c914d)
