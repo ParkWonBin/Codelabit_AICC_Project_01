@@ -39,7 +39,7 @@
     trafficContainer.append(table);
     trafficContainer.append($(`<canvas height="140" id="percentageChart"></canvas>`));
 }
-```
+
     
 - [x] step3 동적으로 그래프 변화 기능 추가(예시코드)
 ```
