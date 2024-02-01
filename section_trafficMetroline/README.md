@@ -22,13 +22,33 @@ function traffic_Move() {
     }
     $('#traffic_slide_gallery').animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
 }
-- [ ] 왼쪽으로 이미지 이동 버튼 구현 (1/15) - 이지우
-- [ ] 자동으로 1초마다 이미지 이동 버튼 구현 (1/15) - 이지우
-- [ ] 자동넘기기 활성화 되면 중지 버튼으로 기능 변경 (1/16) - 박원빈
-- [ ] 자동넘기기 비활성화 시 재생 버튼으로 기능 변경 (1/16) - 이지우
-- [ ] 각종 버튼과 이미지에 대한 CSS 설정 - (1/16)
-- [ ] (시간 남으면) HTML 구조 전체를 JS/JQuery 로 생성하도록 고도화
-- [ ] css 꾸미기 버튼 이미지 변경 + plugin 생성도전 - 이지우 
+- [x] 왼쪽으로 이미지 이동 버튼 구현 (1/15) - 이지우
+```js
+function traffic_back() {
+    traffic_slide_gallery_Xoffset += TRAFFIC_IMAGE_WIDTH
+    if (traffic_slide_gallery_Xoffset > 0) {
+        traffic_slide_gallery_Xoffset = -8*TRAFFIC_IMAGE_WIDTH
+    }
+    $(`#traffic_slide_gallery`).animate({'marginLeft': `${traffic_slide_gallery_Xoffset}px`}, 300)
+}
+- [x] 자동넘기기 활성화 되면 중지 버튼으로 기능 변경(재생/중지 기능버튼 일체화) (1/16) - 박원빈
+```js
+function traffic_play() {
+    // setInterval의 ID를 저장하고 반환
+    if (intervalId === null) {
+        intervalId = setInterval(traffic_Move, 1000);
+        $('#traffic_playToggle').text('■')
+        $('#traffic_playToggle').addClass('BigChar')
+    } else {
+        clearInterval(intervalId);
+        intervalId = null
+        $('#traffic_playToggle').removeClass('BigChar')
+        $('#traffic_playToggle').text('▶')
+    }
+}
+
+- [x] 각종 버튼과 이미지에 대한 CSS 설정 - 박원빈 (1/16)
+
 ### 지하철 길찾기
 - [x] 네이버 지하철 URL 페턴 분석 (1/15) - 박원빈
   - https://map.naver.com/p/subway/{수도권}/{출발역}/{도착역}/{경유역}
