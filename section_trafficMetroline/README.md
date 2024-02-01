@@ -73,4 +73,6 @@ function traffic_play() {
 예시 : 수도권 : 홍대 -> 구로디지털단지, 경유역 선택안함
 https://map.naver.com/p/subway/1000/239,4003,1609/172,746/-
 
-- [ ] 기능구현
+![홍대-가디역](https://map.naver.com/p/subway/1000/239,4003,1609/172,746/-)
+
+- [x] 기능구현
