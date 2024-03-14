@@ -95,11 +95,11 @@ footer .f_info {
 #weatherVideo{
     position: absolute;
     top: 50%;
-    left: 0;
-    /*transform: translateX(-50%);*/
-    transform: translateY(-50%);
-    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
 }
+
 
 /**************************************/
 /* 교통 관련 */
@@ -107,26 +107,23 @@ footer .f_info {
    display: flex;
 }
 #traffic_L{
+    background-color: #e9ecef;
+    overflow: hidden;
+    min-width: 600px;
+    width: 600px;
+    height: 510px;
+}
+#traffic_M{
     background-color: #715253;
-    /*min-width: 600px;*/
     width: 365px;
-    /*width: 640px;*/
     height: 510px;
     position: relative;
     overflow: hidden;
 }
-#traffic_M{
-    background-color: #e9ecef;
-    overflow: hidden;
-    width: 600px;
-    height: 510px;
-}
 #traffic_R{
-    /*width: 100%;*/
-    background-color: green;
-    /*max-height: 580px;*/
+    min-width: 40vw;
+    background-color: #ffffff;
     overflow: hidden;
-    width: 940px;
     height: 510px;
 }
 /*****************************************/
@@ -134,27 +131,24 @@ footer .f_info {
     display: flex;
 }
 #weather_L{
-    /*width: 600px;*/
-    /*min-width: 600px;*/
     position: relative;
     background-color: #00ffe7;
     overflow: hidden;
     width: 365px;
+    min-width: 365px;
     height: 510px;
 }
 #weather_M{
-    /*width:100%;*/
-    background-color: #0033ff;
+    background-color: #b200ff;
+    position: relative;
     overflow: hidden;
-    width: 940px;
+    width: 25vw;
     height: 510px;
 }
 #weather_R{
-    background-color: #b200ff;
-    /*min-width: 600px;*/
-    position: relative;
+    background-color: #0033ff;
     overflow: hidden;
-    width: 600px;
+    width: 50vw;
     height: 510px;
 }
 /********************************************/
