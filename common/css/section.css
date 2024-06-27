@@ -9,13 +9,12 @@
     flex-grow: 1;
     border: 1px solid black;
     min-height: 400px;
-    /* min-width: 400px; */
     position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 */
     margin: 10px;
     margin-bottom: 0;
 }
 
-#AICC1 section > article img {
+#AICC1 section > article>img {
     display: block;
     margin: 0 auto;
     position: absolute;
