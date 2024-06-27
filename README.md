@@ -1,8 +1,7 @@
-### [▶ 베포 페이지 바로가기](https://parkwonbin.github.io/AICC_Proj1/)
-
+### [▶ 베포 페이지 바로가기](https://wbpark.app/webapps/proj_AICC1/app.html)
 ---
 
-# [Codelabit_AICC_Project_01](https://parkwonbin.github.io/AICC_Proj1/)
+# [Codelabit_AICC_Project_01](https://wbpark.app/webapps/proj_AICC1/app.html)
 - 기간 : 2024.01.12.(금) ~ 01.18.(목) (5근무일)
 - 주제 : 날씨 교통 테마 웹페이지 제작하기  
 - 인원 : 박원빈, 김인수, 이지우, 김은지
