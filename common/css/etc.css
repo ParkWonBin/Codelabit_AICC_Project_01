@@ -1,34 +1,4 @@
 
-/**************************************/
-/* 네비게이션 관련 */
-#top-menu {
-    margin: 0 auto;
-    justify-content: space-between; /* 내용이 수평으로 정렬되도록 */
-    align-items: center;
-    padding: 10px 20px; /* 적절한 패딩 추가 */
-}
-#top-title{
-    padding-top: 7px;
-    display: flex;
-    align-items: center;
-    float: left;
-}
-#top-title img {
-    width: 2em;
-}
-#header-title {
-    font-size: 1em;
-    margin-left: 10px;
-}
-#top_nav{
-    line-height: 60px;
-    float: right
-}
-#top_nav a {
-    border-right: 1px solid #e9ecef;
-    padding: 0 20px;
-    line-height: 30px;
-}
 /*****************************************/
 #trafficVideo{
     position: absolute;
@@ -43,58 +13,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 100%;
-}
-
-
-/**************************************/
-/* 교통 관련 */
-#traffic{
-   display: flex;
-}
-#traffic_L{
-    background-color: #e9ecef;
-    overflow: hidden;
-    min-width: 600px;
-    width: 600px;
-    height: 510px;
-}
-#traffic_M{
-    background-color: #715253;
-    width: 365px;
-    height: 510px;
-    position: relative;
-    overflow: hidden;
-}
-#traffic_R{
-    min-width: 40vw;
-    background-color: #ffffff;
-    overflow: hidden;
-    height: 510px;
-}
-/*****************************************/
-#weather{
-    display: flex;
-}
-#weather_L{
-    position: relative;
-    background-color: #00ffe7;
-    overflow: hidden;
-    width: 365px;
-    min-width: 365px;
-    height: 510px;
-}
-#weather_M{
-    background-color: #b200ff;
-    position: relative;
-    overflow: hidden;
-    width: 25vw;
-    height: 510px;
-}
-#weather_R{
-    background-color: #0033ff;
-    overflow: hidden;
-    width: 50vw;
-    height: 510px;
 }
 /********************************************/
 #BGM{
