@@ -1,15 +1,31 @@
 #AICC1 section {
     margin: 0 auto;
     background: white;
-    display: flex;    
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 #AICC1 section > article {
     flex-grow: 1;
     border: 1px solid black;
-    min-height: 500px;
-    min-width: 300px;
+    min-height: 400px;
+    /* min-width: 400px; */
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 */
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+#AICC1 section > article img {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 /* 미디어 쿼리 추가 */
@@ -27,48 +43,7 @@
 #AICC1 #traffic{
     display: flex;
 }
-#AICC1 #traffic_L{
-    background-color: #e9ecef;
-    overflow: hidden;
-    min-width: 600px;
-    width: 600px;
-    height: 510px;
-}
-#AICC1 #traffic_M{
-    background-color: #715253;
-    width: 365px;
-    height: 510px;
-    position: relative;
-    overflow: hidden;
-}
-#AICC1 #traffic_R{
-    min-width: 40vw;
-    background-color: #ffffff;
-    overflow: hidden;
-    height: 510px;
-}
 /*****************************************/
 #AICC1 #weather{
     display: flex;
-}
-#AICC1 #weather_L{
-    position: relative;
-    background-color: #00ffe7;
-    overflow: hidden;
-    width: 365px;
-    min-width: 365px;
-    height: 510px;
-}
-#AICC1 #weather_M{
-    background-color: #b200ff;
-    position: relative;
-    overflow: hidden;
-    width: 25vw;
-    height: 510px;
-}
-#AICC1 #weather_R{
-    background-color: #0033ff;
-    overflow: hidden;
-    width: 50vw;
-    height: 510px;
 }
