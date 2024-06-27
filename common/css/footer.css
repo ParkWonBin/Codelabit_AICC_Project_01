@@ -33,17 +33,36 @@
     margin: 0 auto;
 }
 
-/* 미디어 쿼리 추가 */
-@media (max-width: 840px) {
-    #AICC1 footer .foot_container ul {
-        flex-direction: column;
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-    #AICC1 footer .foot_container ul li {
-        border-right: none;
-        border-bottom: 1px solid #e9ecef;
-        padding: 10px 0;
-    }
-    #AICC1 footer .foot_container ul li:last-child { border: none; }
+
+#AICC1 footer .foot_container ul {
+    display: flex;
+    flex-direction: row; /* 기본 가로 정렬 */
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 15px;
+}
+
+#AICC1 footer .foot_container ul li {
+    border-right: 1px solid #e9ecef;
+    padding: 5px 30px;
+}
+
+#AICC1 footer .foot_container ul li:last-child {
+    border: none;
+}
+
+/* 동적 스타일을 위한 클래스 정의 */
+#AICC1 footer .foot_container ul.vertical {
+    flex-direction: column !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+#AICC1 footer .foot_container ul.vertical li {
+    border-right: none !important;
+    border-bottom: 1px solid #e9ecef !important;
+    padding: 10px 0 !important;
+}
+
+#AICC1 footer .foot_container ul.vertical li:last-child {
+    border: none !important;
 }
