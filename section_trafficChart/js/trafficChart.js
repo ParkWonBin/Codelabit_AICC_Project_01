@@ -58,7 +58,7 @@ function flow_rate() {
             newPercentage = newPercentage + 5
         }
 
-        td.textContent = newPercentage.toFixed(2) + '%';
+        td.textContent = newPercentage.toFixed(0) + '%';
 
         chart_percentageChanges[index].push(newPercentage);
 
